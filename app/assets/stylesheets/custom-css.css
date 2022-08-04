@@ -1,0 +1,8 @@
+#logo {
+    text-transform: uppercase;
+    float: left;
+    font-size: 1.7rem;
+    color: white;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
