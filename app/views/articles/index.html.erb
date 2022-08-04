@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Articles</h1>
+
+<div id="articles">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+			<% @articles.each do |article| %>
+				<tr>
+					<td><%= article.title %>&nbsp;&nbsp;</td>
+					<td><%= article.description %>&nbsp;&nbsp;</td>
+					<td style="display:flex; gap:.5rem;">
+                        <%= link_to "Edit", edit_article_path(article) %>
+                        <%= link_to "Show", article_path(article) %>
+                        <%= button_to "Delete", article_path(article), method: :delete %>
+                    </td>
+				</tr>
+			<% end %>
+        </tbody>
+    </table>
+    <br>
+    <div>
+        <%= link_to "New article", new_article_path %> |
+        <%= link_to "Back to Homepage", root_path %>
+    </div>
+</div>
