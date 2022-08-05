@@ -1,12 +1,21 @@
+
 <div id="<%= dom_id article %>">
-  <p>
-    <strong>Title:</strong>
-    <%= article.title %>
-  </p>
+  <div class="card text-center mb-4 shadow rounded">
+    <div class="card-header" style="font-style: italic;">
+      by KevinJSS
+    </div>
+    <div class="card-body">
+      <h5 class="card-title text-success"><%= article.title %></h5>
+      <p class="card-text"><%= truncate(article.description, length: 100) %></p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= article.description %>
-  </p>
-
+      <div class="d-flex align-items-center text-center justify-content-center">
+        <a href="<%= edit_article_path(article) %>" class="btn btn-outline-info mx-1">Edit</a>
+        <%= button_to "Delete", article_path(article), method: :delete, class: "btn btn-outline-danger" %>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <small>Created <%= time_ago_in_words(article.created_at)%> ago,
+        edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+    </div>
+  </div>
 </div>

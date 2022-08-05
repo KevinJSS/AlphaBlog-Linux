@@ -1,10 +1,13 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @article %>
-
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
-
-  <%= button_to "Destroy this article", @article, method: :delete %>
+<div class="row justify-content-md-center d-flex align-items-center mb-3">
+  <div class="col-md-4">
+    <h1 class="my-4">Article Details</h1>
+  </div>
+  <div class="col-md-4 mt-2 text-end">
+    <%= link_to "Back to articles", articles_path, class: "btn btn-outline-primary" %>
+  </div>
+  
+  <div class="col-md-8">
+    <%= render @article %>
+    <br>
+  </div>
 </div>
