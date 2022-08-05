@@ -1,3 +1,22 @@
+footer {
+    bottom: 0px;
+    top: 89%;
+    position: fixed;
+    margin-top: 2rem;
+    width: 100%;
+    font-size: 16px;
+}
+
+@media (max-height: 800px) {
+    footer {
+        top: 85%;
+    }
+}
+
+#page-content {
+    background-color: black;
+}
+
 #logo {
     text-transform: uppercase;
     float: left;
@@ -5,4 +24,26 @@
     color: white;
     letter-spacing: -1px;
     font-weight: bold;
+}
+
+.banner {
+    background-image: url('banner-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    color: white;
+    padding: 14rem 0;
+
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+
+@media (max-height: 800px) {
+    .banner {
+        padding: 8rem 0;
+    }
 }
