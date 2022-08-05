@@ -1,20 +1,10 @@
-footer {
-    bottom: 0px;
-    top: 89%;
-    position: fixed;
-    margin-top: 2rem;
-    width: 100%;
-    font-size: 16px;
-}
-
-@media (max-height: 800px) {
-    footer {
-        top: 85%;
-    }
+html,
+body {
+    height: 100%;
 }
 
 #page-content {
-    background-color: black;
+    flex: 1 0 auto;
 }
 
 #logo {
@@ -24,6 +14,12 @@ footer {
     color: white;
     letter-spacing: -1px;
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    #articles-header {
+        text-align: center;
+    }
 }
 
 .banner {
@@ -40,10 +36,4 @@ footer {
     -moz-border-radius: 7px;
     -ms-border-radius: 7px;
     -o-border-radius: 7px;
-}
-
-@media (max-height: 800px) {
-    .banner {
-        padding: 8rem 0;
-    }
 }
