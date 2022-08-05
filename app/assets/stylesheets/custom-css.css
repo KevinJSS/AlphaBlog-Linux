@@ -37,3 +37,17 @@ body {
     -ms-border-radius: 7px;
     -o-border-radius: 7px;
 }
+
+.article-form {
+    background:  #9b9b9b46;
+    padding: 3rem 2rem 1.5rem 2rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.article-item {
+    margin-bottom: 2rem;
+}

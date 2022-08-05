@@ -4,7 +4,10 @@
     <h1 class="mt-4">Article Listing</h1>
   </div>
   <div class="col-md-4 mt-4 text-end">
-    <a href="<%= new_article_path %>" class="btn btn-success">New Article</a>
+    <a href="<%= new_article_path %>" class="btn btn-success">
+      <i class="bi bi-plus-circle-fill"></i>&nbsp;&nbsp;
+      New Article
+    </a>
   </div>
 </div>
 <div class="row justify-content-md-center">
@@ -25,7 +28,7 @@
         </div>
         <div class="card-footer text-muted">
           <small>Created <%= time_ago_in_words(article.created_at)%> ago,
-          edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+            edited <%= time_ago_in_words(article.updated_at) %> ago</small>
         </div>
       </div>
     </div>
