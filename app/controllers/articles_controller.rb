@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
   # POST /articles or /articles.json
   def create
     @article = Article.new(article_params)
+    @article.user = User.first
 
     respond_to do |format|
       if @article.save
@@ -58,13 +59,14 @@ class ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def article_params
-      params.require(:article).permit(:title, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def article_params
+    params.require(:article).permit(:title, :description)
+  end
 end
