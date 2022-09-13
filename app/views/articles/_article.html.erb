@@ -1,13 +1,11 @@
-
 <div id="<%= dom_id article %>">
   <div class="card text-center mb-4 shadow rounded">
     <div class="card-header" style="font-style: italic;">
-      by KevinJSS
+      by <%= @article.user.username %>
     </div>
     <div class="card-body">
       <h5 class="card-title text-success"><%= article.title %></h5>
       <p class="card-text"><%= simple_format(article.description) %></p>
-
       <div class="d-flex align-items-center text-center justify-content-center">
         <a href="<%= edit_article_path(article) %>" class="btn btn-outline-info mx-1">Edit</a>
         <%= button_to "Delete", article_path(article), method: :delete, class: "btn btn-outline-danger" %>
