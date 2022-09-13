@@ -7,6 +7,8 @@ class User < ApplicationRecord
                     length: { maximum: 105 },
                     format: { with: URI::MailTo::EMAIL_REGEXP }
 
+  has_many :articles #, dependent: :destroy
+
   # This is a regular expression that matches the RFC 5322 standard for email addresses.
   # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   # format: { with: VALID_EMAIL_REGEX }
