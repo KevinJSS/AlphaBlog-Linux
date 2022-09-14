@@ -7,10 +7,27 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to article_url(@articles_path), notice: "Welcome to the Alpha Blog #{@user.username}, you have signed up successfully." }
+        format.html { redirect_to articles_url, notice: "Welcome to the Alpha Blog #{@user.username}, you have signed up successfully." }
         format.json { render :show, status: :created, location: @articles }
       else
         format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to articles_url, notice: "Your profile information was updated successfully." }
+        format.json { render :show, status: :ok, location: @articles }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
