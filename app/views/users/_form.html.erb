@@ -1,0 +1,26 @@
+<%= form_with(model: user) do |form| %>
+  <%= render 'shared/errors', obj: @user %>
+  <div class="article-form shadow">
+    <div class="form-group row article-item">
+      <%= form.label :username, class: "col-2 col-form-label", style: "font-weight: bold;" %>
+      <div class="col-10">
+        <%= form.text_field :username, class: "form-control", placeholder: "Enter a username"%>
+      </div>
+    </div>
+    <div class="form-group row article-item">
+      <%= form.label :email, class: "col-2 col-form-label", style: "font-weight: bold;" %>
+      <div class="col-10">
+        <%= form.email_field :email, class: "form-control", placeholder: "Enter your email address" %>
+      </div>
+    </div>
+    <div class="form-group row article-item">
+      <%= form.label :password, class: "col-2 col-form-label", style: "font-weight: bold;" %>
+      <div class="col-10">
+        <%= form.password_field :password, class: "form-control", placeholder: "Enter a password" %>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <%= form.submit:"Sign Up", :class => "btn btn-success px-5" %>
+    </div>
+  </div>
+<% end %>

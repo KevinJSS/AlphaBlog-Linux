@@ -1,5 +1,5 @@
 <%= form_with(model: article) do |form| %>
-  <%= render 'shared/errors' %>
+  <%= render 'shared/errors', obj: @article %>
   <div class="article-form shadow">
     <div class="form-group row article-item">
       <%= form.label :title, class: "col-2 col-form-label", style: "font-weight: bold;" %>
