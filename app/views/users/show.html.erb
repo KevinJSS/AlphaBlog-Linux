@@ -1,0 +1,14 @@
+<div class="row justify-content-md-center">
+  <div class="col-md-8 text-center">
+    <h1 class="my-4"><%= @user.username %>'s Profile</h1>
+    <%# <img src="https://www.gravatar.com/avatar/790bb6510e839399f28f8cf4586d07e3?s=220" class="rounded-5"/> %>
+    <%= gravatar_for @user %>
+    <br>
+  </div>
+</div>
+<div class="row justify-content-md-center">
+  <div class="col-8 text-center">
+    <h2 class="my-4">Articles</h2>
+  </div>
+  <%= render 'articles/articles' %>
+</div>
