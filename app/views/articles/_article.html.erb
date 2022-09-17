@@ -1,7 +1,12 @@
 <div id="<%= dom_id article %>">
   <div class="card text-center mb-4 shadow rounded">
-    <div class="card-header" style="font-style: italic;">
-      by <%= @article.user.username %>
+    <div class="card-header fst-italic">
+      <div class="mt-3 mb-2">
+        by <%= link_to article.user.username, user_path(article.user), class: "text-decoration-none text-dark"%>
+      </div>
+      <div class="mb-3">
+        <%= link_to gravatar_for(article.user, size: 100), article.user%>
+      </div>
     </div>
     <div class="card-body">
       <h5 class="card-title text-success"><%= article.title %></h5>

@@ -2,8 +2,8 @@
   <% @articles.each do |article| %>
     <div class="col-md-8 mb-3">
       <div class="card text-center mb-4 shadow rounded">
-        <div class="card-header" style="font-style: italic;">
-          by <%= article.user.username %>
+        <div class="card-header fst-italic">
+          by <%= link_to article.user.username, user_path(article.user), class: "text-decoration-none"%>
         </div>
         <div class="card-body">
           <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success text-decoration-none" %></h5>

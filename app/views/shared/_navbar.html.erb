@@ -6,23 +6,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Bloggers", users_path, class: "nav-link text-white" %>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Articles
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="<%= articles_path %>">Article Listing</a></li>
-            <li><a class="dropdown-item" href="<%= new_article_path %>">Create New Article</a></li>
+            <%= link_to "Article Listing", articles_path, class: "dropdown-item" %>
+            <%= link_to "Create New Article", new_article_path, class: "dropdown-item" %>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="<%= about_path %>">About Us</a>
+          <%= link_to "About Us", about_path, class: "nav-link text-white" %>
         </li>
       </ul>
-      <form class="d-flex">
+      <%# <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-success" type="submit">Search</button>
-      </form>
+      </form> %>
     </div>
   </div>
 </nav>

@@ -3,10 +3,13 @@
     <h1 class="my-4">Editing Article</h1>
   </div>
   <div class="col-md-4 mt-2 text-end">
-    <%= link_to "Show this Article", @article, class: "btn btn-outline-primary" %>
+    <%= link_to "Show this article", @article, class: "btn btn-outline-primary" %>
   </div>
   <div class="col-md-8">
     <%= render "form", article: @article %>
     <br>
+  </div>
+  <div class="col-md-8 mt-4 text-center">
+    <%= link_to "[ Back to Articles ]", articles_path %>
   </div>
 </div>

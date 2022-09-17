@@ -1,13 +1,16 @@
-<div class="row justify-content-md-center d-flex align-items-center mb-3">
-  <div class="col-md-4">
-    <h1 class="my-4">Article Details</h1>
+<div class="row justify-content-md-center align-items-center mb-3">
+  <div class="col-md-8 text-center">
+    <h1 class="mt-3">Article Details</h1>
   </div>
-  <div class="col-md-4 mt-2 text-end">
-    <%= link_to "Back to articles", articles_path, class: "btn btn-outline-primary" %>
+  <div class="col-md-8">
+    <hr>
+    <br>
   </div>
-  
   <div class="col-md-8">
     <%= render @article %>
     <br>
+  </div>
+  <div class="col-md-8 text-center">
+    <%= link_to "[ Back to Articles ]", articles_path %>
   </div>
 </div>
