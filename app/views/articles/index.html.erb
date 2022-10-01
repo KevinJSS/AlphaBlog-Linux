@@ -8,9 +8,14 @@
       New Article
     </a>
   </div>
-  <div class="col-md-8 mb-2">
+  <div class="col-md-8">
     <hr>
   </div>
 </div>
-<%= will_paginate @articles %>
+<div class="flickr_pagination mb-4">
+  <%= will_paginate @articles, :container => false %>
+</div>
 <%= render 'articles'%>
+<div class="flickr_pagination mb-4">
+  <%= will_paginate @articles, :container => false %>
+</div>
