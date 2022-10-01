@@ -22,10 +22,10 @@
           <%= link_to "About Us", about_path, class: "nav-link text-white" %>
         </li>
       </ul>
-      <%# <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-success" type="submit">Search</button>
-      </form> %>
+      <div class="d-flex mx-2">
+        <%= link_to "Log In", login_path, class: "btn btn-light mx-2" %>
+        <%= button_to "Logout", logout_path, :method => "delete", class: "btn btn-danger" %>
+      </div>
     </div>
   </div>
 </nav>

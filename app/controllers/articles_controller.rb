@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
         format.html { redirect_to article_url(@article), notice: "Article was successfully created." }
         format.json { render :show, status: :created, location: @article }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity, notice: "There was a problem creating the article." }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
