@@ -24,6 +24,10 @@
     </div>
   </div>
   <div class="text-center mt-5">
-    <%= link_to "[ Back to your profile ]", @user %>
+    <% if @user.new_record? %>
+      <%= link_to "[ Back to Homepage ]", root_path %>
+    <% else %>
+      <%= link_to "[ Back to your profile ]", @user %>
+    <% end %>
   </div>
 <% end %>
