@@ -12,10 +12,16 @@
 <div class="row justify-content-md-center">
   <div class="col-8 text-center">
     <h3 class="mt-4">Posted Articles</h3>
-    <hr class="mb-5">
+    <hr class="mb-4">
   </div>
   <% if @articles.size > 0%>
+    <div class="flickr_pagination mb-4">
+      <%= will_paginate @articles, :container => false %>
+    </div>
     <%= render 'articles/articles' %>
+    <div class="flickr_pagination mb-4">
+      <%= will_paginate @articles, :container => false %>
+    </div>
   <% else %>
     <div class="col-8 text-center mt-3">
       <p class="fst-italic fw-bold text-muted">No posted articles . . .</p>
