@@ -9,11 +9,17 @@
 .flickr_pagination span,
 .flickr_pagination em {
   padding: 0.2em 0.5em;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .flickr_pagination .disabled {
   color: #999999;
   border: 1px solid #dddddd;
+  border-radius: 5px;
 }
 
 .flickr_pagination .current {
@@ -32,8 +38,8 @@
 
 .flickr_pagination a:hover,
 .flickr_pagination a:focus {
-  color: #000033;
-  border-color: #000033;
+  color: #000;
+  border-color: #000;
 }
 
 .flickr_pagination .page_info {
