@@ -3,19 +3,21 @@
     <div class="col-md-8 mb-3">
       <div class="card text-center mb-4 shadow rounded">
         <div class="card-header fst-italic">
-          by <%= link_to article.user.username, user_path(article.user), class: "text-decoration-none"%>
+          by <%= link_to article.user.username, user_path(article.user), class: "text-decoration-none" %>
         </div>
         <div class="card-body">
           <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success text-decoration-none" %></h5>
           <p class="card-text"><%= truncate(article.description, length: 100) %></p>
           <div class="d-flex align-items-center text-center justify-content-center">
             <a href="<%= article_path(article) %>" class="btn btn-outline-success">View</a>
-            <a href="<%= edit_article_path(article) %>" class="btn btn-outline-primary mx-1">Edit</a>
-            <%= button_to "Delete", article_path(article), method: :delete, class: "btn btn-outline-danger" %>
+            <% if logged_in? && article.user == current_user %>
+              <a href="<%= edit_article_path(article) %>" class="btn btn-outline-primary mx-1">Edit</a>
+              <%= button_to "Delete", article_path(article), method: :delete, class: "btn btn-outline-danger" %>
+            <% end %>
           </div>
         </div>
         <div class="card-footer text-muted">
-          <small>Created <%= time_ago_in_words(article.created_at)%> ago,
+          <small>Created <%= time_ago_in_words(article.created_at) %> ago,
             edited <%= time_ago_in_words(article.updated_at) %> ago</small>
         </div>
       </div>
