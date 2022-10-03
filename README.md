@@ -9,3 +9,8 @@ Blog where users can sign up, post and see other people's articles
 - CSS
 - Bootstrap
 - Ruby On Rails
+
+### Developers:
+- Kevin Alvarado
+
+_Developed in 2022_
