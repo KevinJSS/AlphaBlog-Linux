@@ -23,6 +23,8 @@ _Edit and Delete actions only for the article's author_
 - CSS
 - Bootstrap
 - Ruby On Rails
+- SQLite3
+- PostgresQL (For the Heroku Server)
 
 ### Developers:
 - Kevin Alvarado
