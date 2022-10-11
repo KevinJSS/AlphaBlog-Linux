@@ -17,7 +17,7 @@ _Edit and Delete actions only for the article's author_
 _Edit and Delete actions only for the article's author_
 ![Screenshot from 2022-10-09 15-50-03](https://user-images.githubusercontent.com/103754829/194781388-3a88f286-3c61-4bc4-853e-f2ece590f472.png)
 
-### Build with:
+### Built with:
 - HTML
 - JavaScript
 - CSS
