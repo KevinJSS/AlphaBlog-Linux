@@ -5,11 +5,13 @@
     <%= gravatar_for @user %>
     <br>
   </div>
+
   <% if logged_in? && @user == current_user %>
     <div class="col-md-8 text-center mb-3">
       <%= link_to "Edit your profile", edit_user_path, class: "btn btn-outline-primary mx-1" %>
     </div>
   <% end %>
+  
 </div>
 <div class="row justify-content-md-center">
   <div class="col-8 text-center">
