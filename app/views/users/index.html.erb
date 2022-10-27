@@ -4,15 +4,19 @@
     <hr>
     <br>
   </div>
-  <div>
-    <div class="flickr_pagination mb-4">
-      <%= will_paginate @users, :container => false %>
+  <% if @users.size > 0 %>
+    <div>
+      <div class="flickr_pagination mb-4">
+        <%= will_paginate @users, :container => false %>
+      </div>
+      <%= render 'users'%>
+      <div class="flickr_pagination mb-4">
+        <%= will_paginate @users, :container => false %>
+      </div>
     </div>
-    
-    <%= render 'users'%>
-
-    <div class="flickr_pagination mb-4">
-      <%= will_paginate @users, :container => false %>
+  <% else %>
+    <div class="col-8 text-center">
+      <p class="fst-italic fw-bold text-muted">No bloggers registered . . .</p>
     </div>
-  </div>
+  <% end %>
 </div>

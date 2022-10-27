@@ -12,10 +12,10 @@
   </head>
   <body class="d-flex flex-column">
     <%= render 'shared/navbar' %>
-    <div id="page-content" class="container mt-5">
-      <div class="col-12 mx-auto">
-        <%= render 'shared/messages' %>
-      </div>
+    <div class="col-6 mx-auto mt-5 px-3">
+      <%= render 'shared/messages' %>
+    </div>
+    <div id="page-content" class="container">
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>

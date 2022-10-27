@@ -50,7 +50,11 @@ class UsersController < ApplicationController
     session[:user_id] = nil if @user == current_user
 
     respond_to do |format|
-      format.html { redirect_to articles_path, notice: "Account and all associated articles successfully deleted" }
+      if @user != current_user 
+        format.html { redirect_to articles_path, notice: "Account and all associated articles successfully deleted" }
+      else 
+        format.html { redirect_to root_path, notice: "Account and all associated articles successfully deleted" }
+      end
       format.json { head :no_content }
     end
   end
@@ -58,7 +62,12 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:id])
+    begin
+      @user = User.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "The user you were looking for could not be found"
+      redirect_to root_path
+    end
   end
 
   def user_params
@@ -66,7 +75,7 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @user && !current_user.admin?
+    if @user != nil && current_user != @user && !current_user.admin?
       flash[:alert] = "You can only edit or delete your own profile"
       redirect_to @user
     end
