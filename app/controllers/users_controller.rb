@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to user_path(@user), notice: "Welcome to the Alpha Blog #{@user.username}, you have signed up successfully." }
+        format.html { redirect_to user_path(@user), notice: "Welcome to the Alpha Blog #{@user.username}, you have successfully signed up." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
