@@ -13,7 +13,9 @@
   <body class="d-flex flex-column">
     <%= render 'shared/navbar' %>
     <div id="page-content" class="container mt-5">
-      <%= render 'shared/messages' %>
+      <div class="col-12 mx-auto">
+        <%= render 'shared/messages' %>
+      </div>
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
