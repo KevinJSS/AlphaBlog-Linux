@@ -10,11 +10,15 @@
             <%= link_to gravatar_for(user, size: 150), user %>
           </h5>
           <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
-          <div class="d-flex align-items-center text-center justify-content-center">
+          <div class="d-flex align-items-center text-center justify-content-center my-4">
             <%= link_to "View Profile", user, class: "btn btn-outline-success" %>
             
             <% if logged_in? && user == current_user %>
-              <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-outline-primary mx-1" %>
+              <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-outline-primary mx-2" %>
+            <% end %>
+
+            <% if current_user != nil && current_user.admin? %>
+            <%= button_to "Delete Account", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete your account?"}, class: "btn btn-outline-danger mx-2" %>
             <% end %>
           </div>
         </div>
