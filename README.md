@@ -1,8 +1,6 @@
 # ALPHA BLOG
 Blog where users can sign up, post and see other people's articles
 
-##### * _This application is being developed_ *
-
 #### Welcome Page
 ![Screenshot from 2022-10-09 15-40-19](https://user-images.githubusercontent.com/103754829/194781383-dba93206-b954-4363-8062-6bceb0e35656.png)
 
